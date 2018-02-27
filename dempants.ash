@@ -26,6 +26,7 @@ int hauntedBatteryMax = 500; //5x haunted battery - 7324 (+25% to all Myst gains
 int theFunkMax = 500; //5x the funk - 7330 (+25% to all Moxie gains)
 //MIDDLE
 int barSkinMax = 100; //1x bar skin - 70 (+50% Combat Initiative)
+int disassembledCloverMax = 1000; //1x ten-leaf clover - 24 (Occasional Hilarity)
 
 /**************************************************************************/
 
@@ -183,11 +184,14 @@ void main(string params) {
 						right = "&s2=-2%2C0";
 					}
 					
-					if ( itemShop ($item[bar skin],1, barSkinMax) ) {
-						middle = "&s3=70%2C1";
+					if ( itemShop ($item[disassembled clover],1, disassembledCloverMax) ) {
+						use( 1, $item[disassembled clover] );
+						left = "&s3=24%2C1";
+					} else if ( itemShop ($item[bar skin],1, barSkinMax) ) {
+						left = "&s3=70%2C1";
 					} else {
-						middle = "&s3=-1%2C0";
-					}		
+						left = "&s3=-1%2C0";
+					}							
 					break;
 				case "Muscle":
 					alignment = "1&m=1";
@@ -210,10 +214,13 @@ void main(string params) {
 						right = "&s2=-1%2C0";
 					}
 					
-					if ( itemShop ($item[bar skin],1, barSkinMax) ) {
-						middle = "&s3=70%2C1";
+					if ( itemShop ($item[disassembled clover],1, disassembledCloverMax) ) {
+						use( 1, $item[disassembled clover] );
+						left = "&s3=24%2C1";
+					} else if ( itemShop ($item[bar skin],1, barSkinMax) ) {
+						left = "&s3=70%2C1";
 					} else {
-						middle = "&s3=-1%2C0";
+						left = "&s3=-1%2C0";
 					}					
 					break;
 				case "Moxie":
@@ -237,10 +244,13 @@ void main(string params) {
 						right = "&s2=-1%2C0";
 					}
 					
-					if ( itemShop ($item[bar skin],1, barSkinMax) ) {
-						middle = "&s3=70%2C1";
+					if ( itemShop ($item[disassembled clover],1, disassembledCloverMax) ) {
+						use( 1, $item[disassembled clover] );
+						left = "&s3=24%2C1";
+					} else if ( itemShop ($item[bar skin],1, barSkinMax) ) {
+						left = "&s3=70%2C1";
 					} else {
-						middle = "&s3=-1%2C0";
+						left = "&s3=-1%2C0";
 					}					
 					break;
 				default:
