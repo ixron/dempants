@@ -1,6 +1,6 @@
 script "dempants.ash";
 notify "charles christ";
-string DEMPANTS_VERSION = "0.1";
+string DEMPANTS_VERSION = "0.2";
 
 /*************************************************************************
 Script options:
@@ -186,11 +186,12 @@ void main(string params) {
 					
 					if ( itemShop ($item[disassembled clover],1, disassembledCloverMax) ) {
 						use( 1, $item[disassembled clover] );
-						left = "&s3=24%2C1";
+						middle = "&s3=24%2C1";
+						print("Left Value@01: " + left, "blue");
 					} else if ( itemShop ($item[bar skin],1, barSkinMax) ) {
-						left = "&s3=70%2C1";
+						middle = "&s3=70%2C1";
 					} else {
-						left = "&s3=-1%2C0";
+						middle = "&s3=-1%2C0";
 					}							
 					break;
 				case "Muscle":
@@ -216,11 +217,12 @@ void main(string params) {
 					
 					if ( itemShop ($item[disassembled clover],1, disassembledCloverMax) ) {
 						use( 1, $item[disassembled clover] );
-						left = "&s3=24%2C1";
+						
+						middle = "&s3=24%2C1";
 					} else if ( itemShop ($item[bar skin],1, barSkinMax) ) {
-						left = "&s3=70%2C1";
+						middle = "&s3=70%2C1";
 					} else {
-						left = "&s3=-1%2C0";
+						middle = "&s3=-1%2C0";
 					}					
 					break;
 				case "Moxie":
@@ -246,11 +248,11 @@ void main(string params) {
 					
 					if ( itemShop ($item[disassembled clover],1, disassembledCloverMax) ) {
 						use( 1, $item[disassembled clover] );
-						left = "&s3=24%2C1";
+						middle = "&s3=24%2C1";
 					} else if ( itemShop ($item[bar skin],1, barSkinMax) ) {
-						left = "&s3=70%2C1";
+						middle = "&s3=70%2C1";
 					} else {
-						left = "&s3=-1%2C0";
+						middle = "&s3=-1%2C0";
 					}					
 					break;
 				default:
@@ -261,6 +263,8 @@ void main(string params) {
 			print("Unrecognized setting." , "red");
 			return;
 	}
+	
+	print("Final Left Value: " + middle, "blue");
 	
 	visit_url("inv_use.php?pwd&which=99&whichitem=9573");
 	visit_url("choice.php?whichchoice=1270&pwd&option=" + alignment + resist + left + right + middle, true, true);
