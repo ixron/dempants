@@ -5,3 +5,7 @@ The automatically selected options are still a work in progress.
 Any feedback with tweaks are welcomed.
 
 -Charles Christ (#2500935)
+
+
+Update Log
+0.02 - Added clovers as top option for meat farming pants.
