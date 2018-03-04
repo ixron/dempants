@@ -7,5 +7,5 @@ Any feedback with tweaks are welcomed.
 -Charles Christ (#2500935)
 
 
-Update Log
-0.02 - Added clovers as top option for meat farming pants.
+######Update Log
+######2018/03/04 0.2 - Added clovers as top option for meat farming pants.
