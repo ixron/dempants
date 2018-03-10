@@ -33,7 +33,6 @@ int disassembledCloverMax = 1000; //1x ten-leaf clover - 24 (Occasional Hilarity
 boolean itemShop (item n, int count, int maxCost) {
 	boolean countGoal = false;
 	if(can_interact()) {
-		print("In Aftercore." , "blue");
 		if ( item_amount( n ) < count) {
 			print("Trying to buy: " + count + " " + n + " @ " + maxCost, "blue");
 			buy((count - item_amount( n )),n,maxCost);
@@ -44,7 +43,6 @@ boolean itemShop (item n, int count, int maxCost) {
 			print("Trying to buy: " + count + " " + n + " @ " + maxCost, "blue");
 			buy((count - (item_amount( n ) + storage_amount( n ))),n,maxCost);
 		}
-
 		if ( (item_amount( n )+storage_amount( n )) > count && item_amount( n ) < count) {
 			if ( pulls_remaining() > (count - item_amount( n ))) {
 				take_storage(count - item_amount( n ), n );			
@@ -52,7 +50,6 @@ boolean itemShop (item n, int count, int maxCost) {
 		}		
 	}	
 	if ( item_amount( n ) >= count) {
-		print("Count Goal True: " + count + " " + n + " @ " + maxCost, "blue");
 		countGoal = true;
 		}
 	return countGoal;
@@ -79,8 +76,7 @@ void main(string params) {
 	switch ( params ) {
 		case "level":
 			switch ( type ) {
-				case "Mysticality":
-				
+				case "Mysticality":				
 					alignment = "1&m=2";
 					
 					if ( itemShop ($item[bubblin' crude],1, bubblinCrudeMax) ) {
@@ -88,7 +84,7 @@ void main(string params) {
 					} else if ( itemShop ($item[royal jelly],1, royalJellyMax) ) {
 						left = "&s1=830%2C1";
 					} else {
-					left = "&s1=-2%2C0";
+						left = "&s1=-2%2C0";
 					}
 					
 					if ( itemShop ($item[haunted battery],5, hauntedBatteryMax) ) {
@@ -114,7 +110,7 @@ void main(string params) {
 					} else if ( itemShop ($item[bubblin' crude],1, bubblinCrudeMax) ) {
 						left = "&s1=5789%2C1";
 					} else {
-					left = "&s1=-1%2C0";
+						left = "&s1=-1%2C0";
 					}
 					
 					if ( itemShop ($item[synthetic marrow],5, syntheticMarrowMax) ) {
@@ -263,8 +259,6 @@ void main(string params) {
 			print("Unrecognized setting." , "red");
 			return;
 	}
-	
-	print("Final Left Value: " + middle, "blue");
 	
 	visit_url("inv_use.php?pwd&which=99&whichitem=9573");
 	visit_url("choice.php?whichchoice=1270&pwd&option=" + alignment + resist + left + right + middle, true, true);
