@@ -1,35 +1,39 @@
-script "dempants.ash";
-notify "charles christ";
-string DEMPANTS_VERSION = "0.2";
-
-/*************************************************************************
-Script options:
-level - Will make pants based on class to assist in leveling.
-meat - Will make pants to use for meat farming.
-
-Values for items to use while crafting pants.  
-If item in the mall is lower than set price, then script will buy and use.
-
+/**************************************************************************
+* dempants by ixron
+* Version 0.3
+* https://github.com/ixron/dempants
 **************************************************************************/
-//LEFT
-int bubblinCrudeMax = 100; //1x bubblin' crude - 5789 (Regenerate 5-15 MP per Adventure)
-int royalJellyMax = 154; //1x royal jelly - 830 (Regenerate 5-15 HP per Adventure)
-//RIGHT
-int tacoShellMax = 100; //1x taco shell - 173 (+30% Meat from Monsters)
-int porquoiseMax = 1000; //1x porquoise - 706 (+60% Meat from Monsters) math the number
-int tinyDancerMax = 2000; //1x tiny dancer - 7338 (+30% Item Drops from Monsters)
+script "dempants";
+notify "charles christ";
+
+/**************************************************************************
+Script Options:
+ - level : Will make pants based on class to assist in leveling.
+ - meat  : Will make pants to use for meat farming. 
+**************************************************************************/
+
+/*
+TODO:
+ - Add more script options.
+*/
+
+//-------------------------------------------------------------------------
+// Max price used when buying from the mall
+int bubblinCrudeMax = 100;			//1x bubblin' crude - 5789 (Regenerate 5-15 MP per Adventure)
+int royalJellyMax = 154; 			//1x royal jelly - 830 (Regenerate 5-15 HP per Adventure)
+int tacoShellMax = 100; 			//1x taco shell - 173 (+30% Meat from Monsters)
+int porquoiseMax = 1000; 			//1x porquoise - 706 (+60% Meat from Monsters) math the number
+int tinyDancerMax = 2000; 			//1x tiny dancer - 7338 (+30% Item Drops from Monsters)
 int knobGoblinFirecrackerMax = 200; //3x Knob Goblin firecracker - 747 (+3 Muscle Stats Per Fight)
-int razorSharpCanLidMax = 100; //3x razor-sharp can lid - 559 (+3 Mysticality Stats Per Fight)
-int spiderWebMax = 100; //3x spider web - 27 (+3 Moxie Stats Per Fight)
-int syntheticMarrowMax = 500; //5x synthetic marrow - 7327 (+25% to all Mus gains)
-int hauntedBatteryMax = 500; //5x haunted battery - 7324 (+25% to all Myst gains)
-int theFunkMax = 500; //5x the funk - 7330 (+25% to all Moxie gains)
-//MIDDLE
-int barSkinMax = 100; //1x bar skin - 70 (+50% Combat Initiative)
-int disassembledCloverMax = 1000; //1x ten-leaf clover - 24 (Occasional Hilarity)
+int razorSharpCanLidMax = 100; 		//3x razor-sharp can lid - 559 (+3 Mysticality Stats Per Fight)
+int spiderWebMax = 100; 			//3x spider web - 27 (+3 Moxie Stats Per Fight)
+int syntheticMarrowMax = 1000; 		//5x synthetic marrow - 7327 (+25% to all Mus gains)
+int hauntedBatteryMax = 1000; 		//5x haunted battery - 7324 (+25% to all Myst gains)
+int theFunkMax = 1000; 				//5x the funk - 7330 (+25% to all Moxie gains)
+int barSkinMax = 100; 				//1x bar skin - 70 (+50% Combat Initiative)
+int disassembledCloverMax = 1000; 	//1x ten-leaf clover - 24 (Occasional Hilarity)
 
-/**************************************************************************/
-
+//-------------------------------------------------------------------------
 boolean itemShop (item n, int count, int maxCost) {
 	boolean countGoal = false;
 	if(can_interact()) {
@@ -183,7 +187,6 @@ void main(string params) {
 					if ( itemShop ($item[disassembled clover],1, disassembledCloverMax) ) {
 						use( 1, $item[disassembled clover] );
 						middle = "&s3=24%2C1";
-						print("Left Value@01: " + left, "blue");
 					} else if ( itemShop ($item[bar skin],1, barSkinMax) ) {
 						middle = "&s3=70%2C1";
 					} else {
