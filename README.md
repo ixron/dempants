@@ -8,4 +8,5 @@ Any feedback with tweaks are welcomed.
 
 
 ###### Update Log
+2018/28/06 0.3 - Cleaned up code. Removed some lines used for debug.
 2018/03/04 0.2 - Added clovers as top option for meat farming pants.
