@@ -265,4 +265,5 @@ void main(string params) {
 	
 	visit_url("inv_use.php?pwd&which=99&whichitem=9573");
 	visit_url("choice.php?whichchoice=1270&pwd&option=" + alignment + resist + left + right + middle, true, true);
+	print("Pantcifer, the Lord of Pants Hell accepts your sacrifice.  Enjoy dempants." , "green");
 }
