@@ -6,4 +6,3 @@ Any feedback with tweaks are welcomed.
 
 -Charles Christ (#2500935)
 
-2018/28/06 - Update to v0.3
