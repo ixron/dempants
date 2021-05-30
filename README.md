@@ -3,6 +3,5 @@ Script will automatically create pants based on your class main stat and around 
 The automatically selected options are still a work in progress.
 
 Any feedback with tweaks are welcomed.
-
--Charles Christ (#2500935)
+#2500935
 
