@@ -5,7 +5,6 @@
 **************************************************************************/
 script "dempants";
 notify "charles christ";
-
 /**************************************************************************
 Script Options:
  - level : Will make pants based on class to assist in leveling.
